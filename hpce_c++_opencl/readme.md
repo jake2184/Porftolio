@@ -2,7 +2,7 @@ HPCE 2015 CW6 CYL12/JR2812
 ==========================
 
 Submission for HPCE CW6, Julia Filter.
-Majority of work was completed on DoC graphic PCs, with a powerful NVIDIA Quadro 6000 GPU. Any comparisons of speed below are based on this. Considerations for hardware are described in Future Optimisations/Known Slow points. Apologies for the horrendous git history with "Push from home" commits.
+Majority of work was completed on DoC graphic PCs, with a powerful NVIDIA Quadro 6000 GPU. Any comparisons of speed below are based on this. Considerations for hardware are described in Future Optimisations/Known Slow points.
 
 Work Split
 ----------
