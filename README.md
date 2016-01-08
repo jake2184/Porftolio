@@ -6,7 +6,11 @@ Collection of example pieces of work
 	Java implementation of failure detectors, used in distributed algorithms
 
 - dps_using_tbb_cpp:  
-	CPP implementations of fourier transforms, optimised with threaded building blocks
+	C++ implementations of fourier transforms, optimised with threaded building blocks
+
+- hpce_c++_opencl:
+	C++ implementation of the Julia fractal. Given an existing slow implementation, through algorithmic changes and 		        parallelisation great speedups were achieved. 
+
 
 
 Additional examples can be found here:
