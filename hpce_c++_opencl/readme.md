@@ -85,4 +85,4 @@ Benchmarking / Critical Path Analysis
 - As can be seen, the Write FPS is the liming factor and is therefore the upper bound on the Loop FPS. The discrepancy between the Write FPS and Loop FPS can be explained by the overhead for creating, waiting/sleeping and closing down the seperate write thread. As can be seen below, the utilization of the write thread is ~95% for 100 frames, so very high considering what has to be done. At the same time, it can be noted that the Total Thread Time = 0.313109 and the Loop Time = 0.313388, so a variance of only 0.00028 seconds between the loop and writing thread executions, highlighting that the critical path of the program is the write thread.
   - **Total Write Thread Time:** 0.313109
   - **Total Write Thread Op. Time:** 0.296184
-  - **Utilization:** 0.945944
+  - **Utilization:** 0.945944 
