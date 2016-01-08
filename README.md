@@ -8,7 +8,7 @@ Collection of example pieces of work
 - dps_using_tbb_cpp:  
 	C++ implementations of fourier transforms, optimised with threaded building blocks
 
-- hpce_c++_opencl:
+- hpce_c++_opencl:  
 	C++ implementation of the Julia fractal. Given an existing slow implementation, through algorithmic changes and 		        parallelisation great speedups were achieved. 
 
 
