@@ -1,0 +1,10 @@
+<launch>
+	<node name="recognizer" pkg="pocketsphinx" type="recognizer.py" output="screen">
+		<param name ="dict" value="$(find pocketsphinx)/language/en-us.dict"/>
+		<param name ="lm" value="$(find pocketsphinx)/language/en-us.lm.dmp"/>
+		<!--param name ="mic" value="alsa_input.usb-BLUE_MICROPHONES_BLUE_NESSIE_USB_MIC_20130410-00-MIC.analog-stereo"/-->
+	</node>
+
+	<node name="speechControl" pkg="speech" type="speechControl.py" output="screen"/>
+
+</launch>

@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">RobotFace</string>
+    <string name="pollServerUrlHint">Poll Server URL</string>
+    <string name="pollServerPortHint">Poll Server Port</string>
+    <string name="sequenceIdHint">Sequence ID Override</string>
+    <string name="normalMode">Normal Mode</string>
+    <string name="contextualMode">Contextual Mode</string>
+    <string name="startApplication">Start</string>
+
+    <string name="title_activity_normal_mode">NormalMode</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <string name="title_activity_contextual_mode">ContextualMode</string>
+</resources>

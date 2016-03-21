@@ -1,0 +1,106 @@
+#!/usr/bin/env python
+
+
+# Legacy file to demonstarte the N-chance pocketsphinx/gspeech integration
+
+import roslib; roslib.load_manifest('pocketsphinx')
+import rospy
+import math
+import time
+
+from std_msgs.msg import String
+from std_msgs.msg import Bool
+from std_msgs.msg import Int8
+from core.msg import ToSpeech
+
+class speechController:
+
+	def __init__(self):
+
+		self.pocketsphinx = ""
+		self.googletext = ""
+		self.incorrectCount = 0
+		self.currentUser = 0
+
+		rospy.Subscriber("speech/recognised", String, self.pocketSphinxText)
+		rospy.Subscriber("gspeech/transcript", String, self.googleText)
+		rospy.Subscriber("speech/completed_synth", Bool, self.chooseSource)	
+		rospy.Subscriber("vision/current_user", Int8, self.newUserCheck)
+
+		self.request_received = rospy.Publisher('user_request/request_received', Bool, queue_size = 10)
+		self.not_understood = rospy.Publisher('user_request/not_understood', Bool, queue_size=10)
+		self.toSynth = rospy.Publisher('speech/synth', ToSpeech, queue_size=10)		
+		
+
+		rospy.spin()
+
+	def newUserCheck(self, msg):
+		if not msg.data == self.currentUser:
+			self.incorrectCount = 0 
+			self.currentUser = msg.data
+
+	def chooseSource(self, msg):
+		# Wait for set time?
+		time.sleep(2)
+
+		totalTime = 0
+		if self.incorrectCount <= 2:
+			self.handleMessage(self.pocketsphinx)
+		else:
+			while self.googletext == "" and totalTime < 3 :
+				sleep(0.1)
+				totalTime = totalTime + 0.1
+			if self.googletext == "":
+				toSynth.publish(False, "Please wait a moment")
+			while self.googletext == "" and totalTime < 8 :
+				sleep(0.1)
+				totalTime = totalTime + 0.1
+			if not self.googletext == "":				
+				self.handleMessage(self.googletext)
+			else:
+				self.handleMessage(self.pocketsphinx)
+
+		self.pocketsphinx = ""
+		self.googletext = ""
+
+
+	def pocketSphinxText(self, msg):
+		self.pocketsphinx = msg.data
+	
+	def googleText(self, msg):
+		self.googletext = msg.data
+		
+	def handleMessage(self, msg):
+		message = msg.data;
+
+		# Direction request
+		if message.find("where") > -1 \
+		or message.find("how do i get do") > -1 \
+		or message.find("way") > -1 \
+		or message.find("directions") > -1 \
+			:
+			pub = rospy.Publisher('user_request/destination', String, queue_size=10)
+			pub.publish(message)
+			self.request_received.publish(True)
+			print ("Direction request.")
+
+		elif message.find("who") > -1 \
+		     or message.find("what") > -1 \
+		     or message.find("why") > -1 \
+		     or message.find("when") > -1 \
+			:
+			pub = rospy.Publisher('user_request/question', String, queue_size=10)
+			pub.publish(message)
+			self.request_received.publish(True)
+			print("Open Question request.")
+		else :
+			self.not_understood.publish(True)
+			self.incorrectCount = self.incorrectCount + 1			
+			self.toSynth.publish(True, "I'm sorry, I didn't understand that.")
+
+if __name__ =="__main__":
+	rospy.init_node('speechController')
+	try:
+		speechController()
+	except Exception as e:
+		print e

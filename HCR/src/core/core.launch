@@ -1,0 +1,7 @@
+<launch>
+	<node name="coreNode" pkg="core" type="core_node.py" output="screen"/>
+	<node name="Status" pkg="core" type="status.py" output="screen"/>
+	<node name="androidLink" pkg="core" type="android_link.py" output="screen"/>
+	<node name="speechControl" pkg="speech" type="speechControl.py" output="screen"/>
+	<node name="userRequests" pkg="user_requests" type="directionsHandler.py" output="screen"/>
+</launch>

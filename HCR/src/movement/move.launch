@@ -1,0 +1,6 @@
+<launch>
+	<node name="movementController" pkg="movement" type="robotControl.py" output="screen"/>
+    <node name="visionController" pkg="vision" type="visionControl.py" output="screen"/>
+    <node name="RosAria" pkg="rosaria" type="RosAria.cpp" output="screen"/>
+    <node name="openni_tracker" pkg="openni_tracker" type="openni_tracker.py" output="screen"/>
+</launch>

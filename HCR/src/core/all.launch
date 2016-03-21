@@ -1,0 +1,15 @@
+<launch>
+	<node name="recognizer" pkg="pocketsphinx" type="recognizer.py" output="screen">
+		<param name ="dict" value="$(find pocketsphinx)/language/en-us.dict"/>
+		<param name ="lm" value="$(find pocketsphinx)/language/en-us.lm.dmp"/>
+	</node>
+
+	<!-- gspeech, movement, arm control, http -->
+
+	<node name="directionsHandler" pkg="user_request" type="directionsHandler.py" output="screen"/>
+	<node name="speechControl" pkg="speech" type="speechControl.py" output="screen"/>
+	<node name="visionControl" pkg="vision" type="visionControl.py" output="screen"/>
+	<node name="movementControl" pkg="movement" type="robotControl.py" output="screen"/>
+	<node name="rosaria" pkg="rosaria" type="RosAria" output="screen"/>	
+
+</launch>

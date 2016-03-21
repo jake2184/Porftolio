@@ -1,0 +1,30 @@
+Core:
+Android:
+/android/coordinates
+/android/heading
+
+Arm:
+/armcontrol/wave
+/armcontrol/stop
+
+Speech:
+/speech/recognised
+/speech/synth
+/speech/request_received
+/speech/completed_synth
+/speech/process_speech
+
+User_requests:
+/user_request/directionsQuery	-- Destination for which directions are to be calculated to
+/user_request/destination	-- Output destination after Google search
+/user_request/bearing		-- Bearing from robot location to position of first direction waypoint
+
+Vision:
+/vision/detection		-- Publishes translation and rotation as odometry class
+/vision/current_user 		-- Publishes the ID of the current user (if 0, no users) as a String, might contain square brackets to please strip before using value
+/vision/conversation_ended
+/vision/conversation_started
+
+Movement:
+/movement/completed
+/movement/started

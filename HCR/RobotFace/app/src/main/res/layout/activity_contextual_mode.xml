@@ -1,0 +1,17 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:faceview="http://schemas.android.com/apk/res-auto"
+    android:background="#0099cc"
+    tools:context="com.ic.hcr.robotface.ContextualMode">
+
+    <!-- The primary full-screen view. This can be replaced with whatever view
+         is needed to present your content, e.g. VideoView, SurfaceView,
+         TextureView, etc. -->
+    <com.ic.hcr.robotface.FaceView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        faceview:radius="350dp"
+        android:background="#FF000000"/>
+</FrameLayout>
