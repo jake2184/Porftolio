@@ -1,0 +1,15 @@
+payload=IMPIBM
+disable_monitor=N
+# frequency=80
+frequency=434.600
+baud=300
+camera=1
+low_width=320
+low_height=240
+high=2000
+high_width=640
+high_height=480
+image_packets=4
+enable_bmp085=N
+# logging=GPS,Telemetry
+

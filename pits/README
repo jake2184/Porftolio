@@ -1,0 +1,33 @@
+Edge Of Space - 3/8/2015
+
+Project code for the Edge of Space project, an Imperial College London 3rd Year
+EIE group project, in conjunction with IBM. 
+
+Although a large proportion of this code has been written or changed by us,
+it is heavily based on the work of Dave Akerman  (dave@daveakerman.com). The 
+original code can be found at https://github.com/PiInTheSky/pits
+
+This code was a work in progress. We had all functionality working, including
+2-way communication with LoRa boards and correct PITS transmission. We were 
+undergoing testing when an SD card corrupted and due to time constraints we
+reverted to much simpler code. This therefore was not the code actually used
+during launch, but it was developed for this purpose. The code used during 
+launch was a very minor adaptation of the original mentioned above. 
+
+Compilation should result in a functioning unit, however due to a lack of 
+hardware this cannot currently be verified.
+
+Useful tutorial to set up SD card:
+http://www.pi-in-the-sky.com/index.php?id=sd-card-image-from-scratch
+
+Certain libraries are needed to compile this code:
+Wiring Pi - http://wiringpi.com/download-and-install/
+Again, due to lack of hardware, am unsure if this is all that are needed.
+
+Due to the heavy and rapid adaptation, there is a variety of confusion and 
+overlap within the code, for instance two configuration files. This could be 
+very easily streamlined should the hardware become available. 
+
+tracker/download contains some images from our launch. 
+
+Jake Reynolds, jr2812@ic.ac.uk

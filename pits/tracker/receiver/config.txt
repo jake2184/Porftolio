@@ -1,0 +1,16 @@
+ground=Y
+tracker=IMPIBM
+EnableHabitat=Y
+EnableSSDV=Y
+
+frequency_0=434.4566
+mode_0=2
+DIO0_0=6
+DIO5_0=5
+logging_0=log1.txt
+
+frequency_1=868.50
+mode_1=2
+DIO0_1=27
+DIO5_1=26
+logging_1=log2.txt
