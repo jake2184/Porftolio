@@ -2,6 +2,9 @@
 
 Collection of example pieces of work
 
+- HCR:
+	A group project in Human Centred Robotics, written in Python. I was primarily responsible for the speech recognition modules
+
 - dist_alg_java:  
 	Java implementation of failure detectors, used in distributed algorithms
 
@@ -11,11 +14,7 @@ Collection of example pieces of work
 - hpce_c++_opencl:  
 	C++ implementation of the Julia fractal. Given an existing slow implementation, through algorithmic changes and 		        parallelisation great speedups were achieved. 
 
+- PITS (Pi In The Sky):
+	A group project, I was the primary software developer. Project in conjunction with IBM. Mostly C, with low-level integration with sensors and LoRa communication modules. Also has (simple) Python scripts, usually for communication 
 
-
-Additional examples can be found here:
-
-- https://gitlab.doc.ic.ac.uk/jr2812/pits  
-	C/Python code for the microcontrollers used in a high-altitude balloon project
-
-- on request, examples from private repositories, eg a current robotics project in Python 
+- On Request, examples from private repositories, eg my current final year project, being written in NodeJS and Android 
