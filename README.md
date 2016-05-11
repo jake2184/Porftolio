@@ -14,7 +14,7 @@ Collection of example pieces of work
 - hpce_c++_opencl:  
 	C++ implementation of the Julia fractal. Given an existing slow implementation, through algorithmic changes and 		        parallelisation great speedups were achieved. 
 
-- PITS (Pi In The Sky):
+- PITS (Pi In The Sky):  
 	A group project, I was the primary software developer. Project in conjunction with IBM. Mostly C, with low-level integration with sensors and LoRa communication modules. Also has (simple) Python scripts, usually for communication 
 - LZW:  
 	An LZW compressor/decompressor written in C++
